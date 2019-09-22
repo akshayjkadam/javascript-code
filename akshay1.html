@@ -1,0 +1,187 @@
+<!--
+	 #HTML, CSS, bootstrap and JavaScript is used.
+	 Queation:-  
+	 First Name (max 30 characters a-z and A-Z) 
+	 Last Name (max 30 characters a-z and A-Z) 
+	 Password (min 8 characters, alphanumeric) 
+	 Date Of Birth (Date must be past date) 
+	 Email Id (Standard email validations) 
+	 Mobile No (10 digit number) 
+	 Gender (Must have any of male/female/other) 
+	 Address (Multiline) 
+	 State (State is only single select) 
+	 Hobbies (Student can have multiple hobbies.) 
+
+-->
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <script type="text/javascript">
+   	function testJS() {
+		   //checkbox
+		   	var items=document.getElementsByName('hobbies');
+			var selectedItems="";
+			for(var i=0; i<items.length; i++){
+				if(items[i].type=='checkbox' && items[i].checked==true)
+					selectedItems+=items[i].value+"\n";
+			}
+
+			//gender
+			var ele = document.getElementsByName('gender'); 
+              
+            for(i = 0; i < ele.length; i++) { 
+                if(ele[i].checked) 
+                var gender = ele[i].value; 
+            } 
+		
+			
+    	var fName = document.getElementById('name').value
+    	var lName = document.getElementById('lastName').value
+		var pass = document.getElementById('password').value
+		var date = document.getElementById('date').value
+		var email = document.getElementById('emailid').value
+		var Mno = document.getElementById('mno').value
+		//var genn = document.getElementById('gender').value
+		var addr = document.getElementById('address').value
+		var st = document.getElementById('state').value
+		// var hobby = document.getElementById('hobbies').value
+	
+        	url = '/akshay2.html?name=' + encodeURIComponent(fName) + '&lname=' +encodeURIComponent(lName)  + '&password=' +encodeURIComponent(pass) + '&date=' +encodeURIComponent(date)+ '&emailid=' +encodeURIComponent(email)+ '&mno=' +encodeURIComponent(Mno)+ '&gender=' +encodeURIComponent(gender) + '&address=' +encodeURIComponent(addr)+ '&state=' +encodeURIComponent(st) + '&hobbies=' +encodeURIComponent(selectedItems)	;
+
+    	document.location.href = url;
+	}
+   </script>
+</head>
+
+<body>
+
+<div class="container col-md-4 card card-body">
+	<form name="form1" action="akshay2.html" method="get">
+	<div class="form-group">
+		<label for ="fname">FirstName:</label>
+		<input type ="text" id="name" name="n" class="form-control" pattern="[A-Za-z]+" maxlength="30" placeholder="Enter first Name"><br>
+
+		<label for ="fname">LastName:</label>
+		<input type ="text" id="lastName" name="n1" class="form-control" pattern="[A-Za-z]+" maxlength="30" placeholder="Enter Last Name"><br>
+
+		
+		<label for="password">Password</label>
+		<input type="password" class="form-control" id="password" pattern="[A-Za-z0-9]+" minlength="8" placeholder="Enter Password"><br>
+		
+		<label for ="fname">Date of Birth</label>
+		<input type ="date"  class="form-control" id="date" name="date" maxlength="09/19/2019"><br>
+
+		<label for="emailid">Email Id</label>
+		<input type="email" class="form-control" id="emailid"  placeholder="Enter email"><br>
+		
+		<label for="mno">Mobile Number</label>
+		<input type="text" class="form-control" id="mno"  pattern="\d*" maxlength="10" placeholder="Enter Phone Number"><br>
+   
+		
+	
+		  <!--
+			  
+		  <label class="my-1 mr-2" for="gender">Gender:</label>
+		  <div class="radio">
+			<label><input type="radio" name="gender" value="Male" checked>Male</label>
+		  </div>
+		  <div class="radio">
+			<label><input type="radio" name="gender" value="Female">Female</label>
+		  </div>
+		  <div class="radio">
+			<label><input type="radio" name="gender" value="Other">Other</label>
+		  </div>
+		  
+		  -->
+		  
+		  <fieldset class="form-group">
+			<div class="row">
+			  <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+				<div class="col-sm-10">
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="gender" value="Male">
+					  <label class="form-check-label" for="gender">
+						Male
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="gender" value="Female">
+					  <label class="form-check-label" for="gender">
+						Female
+					  </label>
+					</div>
+					<div class="form-check">
+						
+						<input class="form-check-input" type="radio" name="gender" value="Other">
+						<label class="form-check-label" for="gender">
+						  Others
+						</label>
+					  </div>
+				</div>
+			</div>
+		</fieldset>
+	
+		<!--
+		Hobbies:
+		<input type="checkbox" name="hobbies" value="cream">cream<br>
+		<input type="checkbox" name="hobbies" value="sugar">sugar<br>
+		-->
+		
+			
+
+					
+				
+
+		  <br>
+		<label for ="fname">Address:</label>
+		<textarea id="address" name="address" class="form-control" pattern="[A-Za-z]+" placeholder="Enter Addresss"></textarea>
+
+
+		<br>
+		<label class="my-1 mr-2" for="state">State</label>
+		<select class="custom-select my-1 mr-sm-2" id="state">
+			<option selected value="0">Select state</option>
+			<option value="Maharashtra">Maharashtra</option>
+			<option value="Gujarat">Gujarat</option>
+			<option value="Bihar">Bihar</option>
+		</select>
+
+		<br><br>
+		<fieldset class="form-group">
+			<div class="row">
+			  <legend class="col-form-label col-sm-2 pt-0">Hobbie</legend>
+			  	<div class="col-sm-10">
+					<div class="form-check">
+				 		 <input class="form-check-input" type="checkbox" name="hobbies" id="hobbies" value="Codeing">
+				 		 <label class="form-check-label" id="hobbies">
+							Codeing
+				  		</label>
+					</div>
+					<div class="form-check">
+				  		<input class="form-check-input" type="checkbox" name="hobbies" id="hobbies"  value="Playing">
+				  		<label class="form-check-label" id="hobbies">
+						Playing
+				 		</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="hobbies"id="hobbies" value="Reading">
+						<label class="form-check-label" id="hobbies">
+						  Reading
+						</label>
+					</div>
+			  </div>
+			</div>
+		</fieldset>
+
+		
+		<center> <button type="button" class="btn btn-outline-primary"  id="print" onClick="testJS()">Submit</button></center>
+	</div>
+	</form>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

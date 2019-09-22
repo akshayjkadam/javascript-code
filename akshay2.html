@@ -1,0 +1,94 @@
+<head>
+   
+
+  <meta charset="utf-8"> 
+  <meta name="viewport" 
+content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+  <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+  <script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
+  <script src= 
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+<script type="text/javascript">
+   	window.onload = function () {
+	    var url = document.location.href,
+	        params = url.split('?')[1].split('&'),
+	        data = {}, tmp;
+	    for (var i = 0, l = params.length; i < l; i++) {
+	         tmp = params[i].split('=');
+	         data[tmp[0]] = tmp[1];
+	    }
+	    var addr = data.address.split(/%20/).join(" ")
+	    var addre = addr.split(/%2C/).join(" ")
+	    //hobbies split
+		var hobby = data.hobbies.split(/%0A/).join(", ")
+
+		var em = data.emailid.split(/%40/).join("@")
+		
+	    document.getElementById('nm').innerHTML = data.name;
+	    document.getElementById('lname').innerHTML = data.lname;
+		document.getElementById('pass').innerHTML= data.password
+	    document.getElementById('date').innerHTML = data.date;
+		document.getElementById('eml').innerHTML = em;
+		document.getElementById('mn').innerHTML = data.mno;
+		document.getElementById('gender').innerHTML = data.gender;
+		document.getElementById('addr').innerHTML = addre;
+		document.getElementById('st').innerHTML = data.state;
+		document.getElementById('hobbies').innerHTML = hobby;
+		
+	}
+   </script>
+</head>
+
+<body>
+
+<form name="form1" action="akshay2.html" method="get">
+
+	<div class="card"> 
+		<div class="card-body"> 	<b>First Name:</b> <span id="nm"></span><br>
+		</div> 
+	</div> 
+	<div class="card"> 
+		<div class="card-body"> 	<b>Last Name:</b> <span id="lname"></span><br>
+		</div> 
+	</div>
+	<div class="card"> 
+		<div class="card-body"> 	<b>password:</b>  <span id="pass"></span><br>
+		</div> 
+	</div>
+	<div class="card"> 
+		<div class="card-body"> 	<b>Date Of Birth:</b>  <span id="date"></span><br>
+		</div> 
+	</div>
+	<div class="card"> 
+		<div class="card-body"> 	<b>Email Id:</b>  <span id="eml"></span><br>
+		</div> 
+	</div>
+	<div class="card"> 
+		<div class="card-body"> 	<b>Mobile No.:</b>  <span id="mn"></span><br>
+		</div> 
+	</div>
+	<div class="card"> 
+		<div class="card-body"> 	<b>Gender:</b> <span id="gender"></span><br>
+		</div> 
+	</div>
+	<div class="card"> 
+		<div class="card-body"> 	<b>Address:</b> <span id="addr"></span><br>
+		</div> 
+	</div>
+	<div class="card"> 
+		<div class="card-body"> 	<b>State:</b>  <span id="st"></span><br>
+		</div> 
+	</div>
+	<div class="card"> 
+		<div class="card-body"> 	<b>Hobbies:</b> <span id="hobbies"></span><br>
+		</div> 
+	</div>
+	
+</form>
+
+</body>
+</html>
